@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const instance = axios.create({
-    baseURL: "https://cors-bypassing-server.herokuapp.com/"
+    baseURL: "https://bye-cors.herokuapp.com/https://gh-trending-api.herokuapp.com/"
 });
 
 export default instance;
