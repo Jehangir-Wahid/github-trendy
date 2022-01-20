@@ -1,0 +1,4 @@
+export enum ActionTypes {
+    GET_DEVELOPERS = "GET_DEVELOPERS",
+    GET_REPOSITORIES = "GET_REPOSITORIES",
+}
