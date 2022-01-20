@@ -11,4 +11,9 @@ interface GetRepositories {
     payload: RepositoryType[],
 }
 
-export type Action = GetDevelopers | GetRepositories
+interface SetIsLoading {
+    type: ActionTypes.SET_IS_LOADING,
+    payload: boolean,
+}
+
+export type Action = GetDevelopers | GetRepositories | SetIsLoading

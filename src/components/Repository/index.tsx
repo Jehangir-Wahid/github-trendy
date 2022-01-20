@@ -1,25 +1,24 @@
 import React from "react";
-import { RepositoryType } from "../redux/types";
-import { Fork, Repo, Star } from "./Icons";
+import {RepositoryType} from "../../redux/types";
+import {Fork, Repo, Star} from '../Icons'
 
 const Repository: React.FC<RepositoryType> = ({
-    username,
-    repositoryName,
-    url,
-    description,
-    language,
-    languageColor,
-    totalStars,
-    forks,
-    starsSince,
-    builtBy,
-}) => {
+        username,
+        repositoryName,
+        url,
+        description,
+        language,
+        languageColor,
+        totalStars,
+        forks,
+        starsSince,
+        builtBy,
+    }) => {
     return (
-        <article className="repository text-secondary border-bottom border-dark-secondary p-4">
+        <article className="text-secondary border-bottom border-dark-secondary p-4">
             <h5 className="d-flex align-items-center m-0 justify-content-between">
-                <a href="" className="text-decoration-none">
-                    <Repo className="text-muted me-2" />
-                    {username} /{" "}<span className="">{repositoryName}</span>
+                <a href="" className="text-decoration-none"><Repo
+                    className="text-muted me-2"/> {username} / <b>{repositoryName}</b>
                 </a>
                 <div className="js-toggler-container js-social-container starring-container BtnGroup d-flex">
                     <div className="unstarred js-social-form BtnGroup-parent flex-auto">
@@ -28,7 +27,7 @@ const Repository: React.FC<RepositoryType> = ({
                             this
                             repository"
                             type="submit"
-                            className="btn btn-sm btn-outline-secondary bg-dark-secondary border rounded-0 rounded-start border-dark-secondary js-toggler-target rounded-left-2 BtnGroup-item"
+                            className="btn btn-sm btn-outline-secondary bg-dark-mild border rounded-0 rounded-start border-dark-secondary js-toggler-target rounded-left-2 BtnGroup-item"
                         >
                             <Star className="text-muted mx-1 align-text-bottom" />
                             <span className="d-none d-md-inline text-muted mx-1"> Star </span>
@@ -40,7 +39,7 @@ const Repository: React.FC<RepositoryType> = ({
                     >
                         <summary
                             aria-label="Add this repository to a list"
-                            className="btn btn-sm btn-outline-secondary bg-dark-secondary border rounded-0 rounded-end border-dark-secondary border-start-0 BtnGroup-item px-2 float-none"
+                            className="btn btn-sm btn-outline-secondary bg-dark-mild border rounded-0 rounded-end border-dark-secondary border-start-0 BtnGroup-item px-2 float-none"
                             aria-haspopup="menu"
                             role="button"
                         >
@@ -58,30 +57,30 @@ const Repository: React.FC<RepositoryType> = ({
                     </details>
                 </div>
             </h5>
-            <p className="text-muted medium my-1 w-75">{description}</p>
+            <p className="text-muted small my-1">{description}</p>
             <div className="row align-items-center small text-muted mt-2">
                 <div className="col d-flex flex-wrap align-items-center ">
+
                     <div className="me-4">
-                        <span style={{ color: `${languageColor}` }}>{language}</span>
+                            <span style={{ color: `${languageColor}` }}>
+                                   {language}
+                            </span>
                     </div>
-                    <a
-                        href={url + "/stargazers"}
-                        className="text-decoration-none d-flex align-items-center me-4 text-muted"
-                    >
-                        <Star className="text-muted me-1" />
+
+                    <a href={url + "/stargazers"}
+                       className="text-decoration-none d-flex align-items-center me-4 text-muted">
+                        <Star className="text-muted me-1"/>
                         {totalStars}
                     </a>
 
-                    <a
-                        href={url + "/network/members"}
-                        className="text-decoration-none d-flex align-items-center me-4 text-muted"
-                    >
-                        <Fork className="text-muted me-1" />
+                    <a href={url + "/network/members"}
+                       className="text-decoration-none d-flex align-items-center me-4 text-muted">
+                        <Fork className="text-muted me-1"/>
                         {forks}
                     </a>
 
                     <span className="d-flex align-items-center me-4">
-                        <span className="me-1">Built by</span>
+                            <span className="me-1">Built by</span>
                         {builtBy.map((developer, index) => (
                             <a
                                 className="me-1"
@@ -100,8 +99,8 @@ const Repository: React.FC<RepositoryType> = ({
                     </span>
 
                     <span className="d-flex align-items-center ms-lg-auto">
-                        <Star className="text-muted me-1" />
-                        <span>{starsSince} stars today</span>
+                            <Star className="text-muted me-1"/>
+                            <span>{starsSince} stars today</span>
                     </span>
                 </div>
             </div>

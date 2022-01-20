@@ -1,22 +1,38 @@
 body {
-    height: 100%;
-    color: #8b949e !important;
-    background-color: #0d1117 !important;
-    font-family: "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji",
-        "Segoe UI Emoji";
-    font-size: 14px !important;
+  height: 100%;
+  color: #8b949e !important;
+  background-color: #0d1117 !important;
+  font-family: "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji",
+      "Segoe UI Emoji";
+  font-size: 14px !important;
 }
 
-.bg-dark-secondary {
-    background-color: $gray-800;
+.bg-dark-mild{
+  background-color:$gray-500;
 }
 
-.border-dark-secondary {
-    border-color: $gray-700 !important;
+.border-dark-mild{
+  border-color:$gray-500 !important;
 }
 
-.text-light-secondary {
-    color: #c9d1d9;
+.bg-dark-secondary{
+  background-color:$gray-800;
+}
+
+.border-dark-secondary{
+  border-color:$gray-700 !important;
+}
+
+.text-light-secondary{
+ color: #c9d1d9;
+}
+
+.text-fire{
+  color:#db6d28;
+}
+
+.text-pink{
+  color:#db61a2;
 }
 
 .btn-outline-secondary:hover {
@@ -25,10 +41,6 @@ body {
   border-color: #8b949e !important;
 }
 
-.btn:hover .icon-sponsor {
-    transform: scale(1.1);
-}
-
-.icon-sponsor {
-    color:  #db61a2 !important;
+.btn-sm:hover .icon-sponsor {
+  transform: scale(1.1);
 }

@@ -31,9 +31,7 @@ export default () => {
                                 <ul className="list-inline m-0 col-lg-9 d-flex flex-wrap flex-lg-nowrap justify-content-center justify-content-lg-between mb-2 mb-lg-0">
                                     { footerMenu.map((item, index)=>{
                                         return (
-                                            <li key={index} className="list-inline-item me-4">
-                                                <a className="text-decoration-none" href="https://github.com">{item}</a>
-                                            </li>
+                                            <li key={index} className="list-inline-item me-4"><a className="text-decoration-none" href="https://github.com">{item}</a></li>
                                         )
                                     })}
                                 </ul>

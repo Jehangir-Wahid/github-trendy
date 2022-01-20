@@ -5,13 +5,17 @@ import TrendingServer from "../../service/server"
 import { DeveloperType, RepositoryType } from "../types";
 
 export const getDevelopers = () => {
-    return async (dispatch: Dispatch<Action>) => {
+    return (dispatch: Dispatch<Action>) => {
         TrendingServer.get("developers")
-        .then((response) => {
+        .then(async (response) => {
             const developers: DeveloperType[] = response.data
-            dispatch({
+            await dispatch({
                 type: ActionTypes.GET_DEVELOPERS,
                 payload: developers,
+            });
+            dispatch({
+                type: ActionTypes.SET_IS_LOADING,
+                payload: false,
             });
         })
         .catch((error) => {
@@ -23,15 +27,28 @@ export const getDevelopers = () => {
 export const getRepositories = () => {
     return (dispatch: Dispatch<Action>) => {
         TrendingServer.get("repositories")
-        .then((response) => {
+        .then(async (response) => {
             const repositories: RepositoryType[] = response.data
-            dispatch({
+            await dispatch({
                 type: ActionTypes.GET_REPOSITORIES,
                 payload: repositories,
+            });
+            dispatch({
+                type: ActionTypes.SET_IS_LOADING,
+                payload: false,
             });
         })
         .catch((error) => {
             console.log(error)
         })
+    };
+};
+
+export const setIsLoading = (isLoading: boolean) => {
+    return (dispatch: Dispatch<Action>) => {
+        dispatch({
+            type: ActionTypes.SET_IS_LOADING,
+            payload: isLoading,
+        });
     };
 };
